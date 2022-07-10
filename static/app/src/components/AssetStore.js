@@ -3,6 +3,7 @@ import assets from '../data/assetData';
 import event from '../utils/events';
 import {commonParams} from '../data/params';
 import {RenderContext, ParamContext, initRenderContext} from '../utils/context';
+import {stop} from '../utils/timer';
 
 export default function AssetStore() {
 
@@ -11,7 +12,7 @@ export default function AssetStore() {
 
 	const onAssetClick = (asset) => {
 		event.emit('load', asset.path);
-
+		stop();
 		if (Array.isArray(asset.params)) {
 			setParamContext([...commonParams, ...asset.params])
 		} else {

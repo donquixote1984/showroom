@@ -48,7 +48,7 @@ def threaded_render(context, path):
 		param_node.parm("layout").set(context["layout"])
 	
 	print('start render')
-	#rnode.render();
+	rnode.render();
 	print('render done');
 
 def render1(): 

@@ -1,11 +1,14 @@
-let interval;
+let interval = null;
 
-export function start(fun, interval=1000) {
+export function start(fun, inter=1000) {
 	stop();
 	interval = setInterval(() => {
 		fun();
-	}, interval)
+	}, inter)
 }
 export function stop() {
-	clearInterval(interval);
+	if (interval != null) {
+		clearInterval(interval);
+		interval = null;
+	}
 }

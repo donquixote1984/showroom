@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {RenderContext} from '../utils/context';
 import {preview, render, listfile} from '../api/api'
 import {start, stop} from '../utils/timer';
@@ -7,14 +7,22 @@ import CircularProgress from '@mui/material/CircularProgress';
 import IconButton from '@mui/material/IconButton';
 import FindReplaceIcon from '@mui/icons-material/FindReplace';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-
+import event from '../utils/events';
 export default function Previews() {
 	const {renderContext, setRenderContext} = useContext(RenderContext);
 	const [loading, setLoading] = useState(false);
 	const [images, setImages] = useState([]);
 	const [mode360, setMode360] = useState(false);
 	const [index360, setIndex360] = useState(0);
-
+	useEffect(() => {
+		event.on('load', ()=> {
+			setImages([]);
+			setIndex360(0);
+			setLoading(false);
+			setMode360(false);
+			stop();
+		})
+	}, []);
 	const onRender = async (type) => {
 		startLoading();
 		if (type === 'preview') {

@@ -48,7 +48,7 @@ export default function Previews() {
 						endLoading();
 					}
 				} else {
-					if (index > 5) {
+					if (index > 6) {
 						stop();
 						endLoading();
 					}

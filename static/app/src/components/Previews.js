@@ -32,7 +32,10 @@ export default function Previews() {
 		}
 		const {path, realRender} = await render(renderContext);
 		if (realRender) {
-			start(()=> listfile(path), 5000);
+			start(async ()=> {
+				const paths = await listfile(path)
+				setImages(paths);
+			}, 5000);
 		} else {
 			const paths = await listfile(path);
 			let index = 1;

@@ -106,6 +106,18 @@ def render(context):
 		_render(context, path);
 	return (realRender, context['id'] + '/'+path);
 
+
 def walk(path):
 	realPath = './static/app/public/content/' + proj + '/render/'+path;
-	return list(map(lambda s: "/content/"+proj+"/render/"+path+"/"+s, os.listdir(realPath)))
+	pngs = []
+	for png in os.listdir(realPath):
+		if (isTargetFile(realPath + "/" + png)):
+			pngs.append(png)
+	return list(map(lambda s: "/content/"+proj+"/render/"+path+"/"+s, pngs ))
+
+def isTargetFile(pngpath):
+	filesize = os.path.getsize(pngpath);
+	if (filesize > 0 and pngpath.endswith('.png')):
+		return True
+	else:
+		return False

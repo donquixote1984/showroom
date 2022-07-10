@@ -10,8 +10,10 @@ def threaded_render(context, path):
 	rnode = hou.node("/out/" + context['id']);
 	if (context['preview']):
 		rnode.parm('trange').set('off');
-
 	param_node = hou.node('/obj/params/params')
+	if path:
+		param_node.parm("targetFolder").set(path)
+	
 	if (context['capture'] == '360'):
 		param_node.parm("capture").set(360)
 	else:
@@ -34,17 +36,16 @@ def threaded_render(context, path):
 	param_node.parm("backLightColorg").set(rgb['g'])
 	param_node.parm("backLightColorb").set(rgb['b'])
 
+	if (context["HD"]):
+		rnode.parm("take").set("HD")
+
 	if "colorSeed" in context:
 		param_node.parm("colorSeed").set(context["colorSeed"])
 	if "multiple" in context:
 		param_node.parm("multiple").set(context["multiple"])
 	if "layout" in context:
 		param_node.parm("layout").set(context["layout"])
-
-	if path:
-		param_node.parm("targetFolder").set(path)
-	if (context["HD"]):
-		rnode.parm("take").set("HD")
+	
 	print('start render')
 	rnode.render();
 	print('render done');

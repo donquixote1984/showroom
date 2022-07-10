@@ -4,7 +4,8 @@ import json
 
 urls = (
     '/', 'index',
-    '/api/render', 'api'
+    '/api/render', 'api',
+    '/api/path', 'path'
 )
 
 
@@ -19,9 +20,17 @@ class index:
 class api:
     def POST(self):
         request = json.loads(web.data())
-        path = model.render(request);
+        (realRender, path) = model.render(request);
         web.header('Content-Type', 'application/json')
-        return json.dumps({"success": True, "path": path})
+        return json.dumps({"success": True, "path": path, "realRender":realRender})
+    def OPTIONS(self):
+        pass
+
+class path:
+    def GET(self):
+        data = web.input()
+        s = model.walk(data.p);
+        return json.dumps({"paths": s})
     def OPTIONS(self):
         pass
 

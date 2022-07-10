@@ -2,7 +2,8 @@ import hou
 import time
 import os
 from threading import Thread
-hou.hipFile.load('./static/app/public/content/demo1/demo1.hip')
+proj = os.environ['PROJ']
+hou.hipFile.load('./static/app/public/content/'+proj+'/'+proj+'.hip')
 
 def threaded_render(context, path):
 	print(context)
@@ -47,7 +48,7 @@ def threaded_render(context, path):
 		param_node.parm("layout").set(context["layout"])
 	
 	print('start render')
-	rnode.render();
+	#rnode.render();
 	print('render done');
 
 def render1(): 
@@ -95,11 +96,16 @@ def _render(context, path=None):
 
 def render(context):
 	path = findRenderPath(context)
-	realPath = './static/app/public/content/demo1/render/' +context["id"] +"/"+ path
+	realPath = './static/app/public/content/'+proj+'/render/' +context["id"] +"/"+ path
+	realRender = False
 	if not os.path.isdir(realPath):
+		realRender = True
 		_render(context, path);
 	if not context['mock']:
+		realRender = True
 		_render(context, path);
-	return path
+	return (realRender, context['id'] + '/'+path);
 
-
+def walk(path):
+	realPath = './static/app/public/content/' + proj + '/render/'+path;
+	return list(map(lambda s: "/content/"+proj+"/render/"+path+"/"+s, os.listdir(realPath)))

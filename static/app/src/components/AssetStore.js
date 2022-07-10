@@ -18,7 +18,7 @@ export default function AssetStore() {
 			setParamContext([...commonParams])
 		}
 
-		setRenderContext({...initRenderContext, id: asset.id, mock: asset.mock});
+		setRenderContext({...initRenderContext, id: asset.id, mock: asset.mock, proj: asset.proj});
 	};
 	return (
 		<div id='asset-store'>

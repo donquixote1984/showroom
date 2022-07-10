@@ -1,0 +1,11 @@
+Model Information:
+* title:	Beats Studio 3 Heaphones
+* source:	https://sketchfab.com/3d-models/beats-studio-3-heaphones-80a807c2db784f48b93a9cccbb0df879
+* author:	lazercar (https://sketchfab.com/lazercar)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Beats Studio 3 Heaphones" (https://sketchfab.com/3d-models/beats-studio-3-heaphones-80a807c2db784f48b93a9cccbb0df879) by lazercar (https://sketchfab.com/lazercar) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

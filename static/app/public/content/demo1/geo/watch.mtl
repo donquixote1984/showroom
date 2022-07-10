@@ -1,0 +1,52 @@
+# Blender MTL File: 'None'
+# Material Count: 4
+
+newmtl Glass1.004
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\Downloads\\apple_watch_series_7_expected_skyblue\\textures\\Glass1_normal.png
+map_Kd D:\\Downloads\\apple_watch_series_7_expected_skyblue\\textures\\Glass1_baseColor.png
+map_d D:\\Downloads\\apple_watch_series_7_expected_skyblue\\textures\\Glass1_baseColor.png
+
+newmtl Redring.004
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\Downloads\\apple_watch_series_7_expected_skyblue\\textures\\Redring_normal.png
+map_Kd D:\\Downloads\\apple_watch_series_7_expected_skyblue\\textures\\Redring_baseColor.png
+
+newmtl lambert1.004
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\Downloads\\apple_watch_series_7_expected_skyblue\\textures\\lambert1_normal.png
+map_Kd D:\\Downloads\\apple_watch_series_7_expected_skyblue\\textures\\lambert1_baseColor.png
+map_Ke D:\\Downloads\\apple_watch_series_7_expected_skyblue\\textures\\lambert1_emissive.png
+
+newmtl notch.004
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\Downloads\\apple_watch_series_7_expected_skyblue\\textures\\notch_normal.png
+map_Kd D:\\Downloads\\apple_watch_series_7_expected_skyblue\\textures\\notch_baseColor.png

@@ -1,0 +1,23 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl Camera
+Ns 199.999995
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd D:\\DAE\\2019-2020\\GAP\\AssignmentRetakes - Canon Eos 60d with canon EF 85mm f1.4l IS USM\\textures\\Camera_R.png
+
+newmtl Lens
+Ns 199.999995
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 0.752941 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3

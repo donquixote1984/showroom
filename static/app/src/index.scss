@@ -24,7 +24,11 @@ code {
     monospace;
 }
 
-
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 body {
   background: #3e3939 ;
   font-size: 14px;
@@ -41,9 +45,11 @@ body {
   }
 }
 #asset-store {
-  padding: 10px;
     border-top:  1px solid #FFF;
     color: #aaa;
+    height: 100%;
+    .asset-details {
+      padding: 20px;
   ul {
     list-style: none;
     display: flex;
@@ -78,6 +84,33 @@ body {
         margin-top: 10px;
       }
     }
+  }
+}
+  display: flex;
+  .asset-types {
+
+    ul {
+      background: #585858;
+      color: #FFF;
+      display: flex;
+      li {
+        font-weight: bold;
+        
+        margin: 0;
+        a {
+          display: block;
+          color: inherit;
+          text-decoration: none;
+          padding: 30px 10px;
+          &.active {
+            background:#3e3939;
+          }
+        }
+      }
+      margin: 0;
+      padding: 0;
+    }
+    writing-mode: tb-rl; 
   }
 }
 
@@ -185,5 +218,39 @@ body {
       height: 100%;
     }
 
+  }
+
+}
+
+
+.material-selection {
+
+  .shader-title {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom:10px;
+  }
+  .shader-sample {
+    width: 80px;
+    height: 80px;
+  }
+
+  .material-shaders {
+
+  }
+
+  .material-images {
+    display: flex;
+    li {
+      margin-right: 10px;
+      margin-bottom: 10px;
+      a {
+        display: block;
+        cursor: pointer;
+        &.active {
+          border:2px solid #FFF;
+        }
+      }
+    }
   }
 }

@@ -13,5 +13,8 @@ export const initRenderContext = {
         frontLightIntensity: 1,
         backLightColor: {r:255, g:255, b:255},
         backLightIntensity: 1,
-        environmentLightIntensity: 1
+        environmentLightIntensity: 1,
+
+        sofanum: 3,
+        sofastyle: 0,
 };

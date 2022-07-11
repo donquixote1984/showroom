@@ -2,8 +2,10 @@ import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import {Capture, FocalLengthRange, LookDownRatioRange, HD} from '../ctrls/Camera';
 import {Layout} from '../ctrls/Layout';
+import {SofaStyle} from '../ctrls/Style'
 import {ColorPicker, EnvironmentIntensity} from '../ctrls/Lights';
 import Grid3x3Icon from '@mui/icons-material/Grid3x3';
+import {Material} from '../ctrls/Material';
 
 export const commonParams = [
 	{
@@ -63,3 +65,26 @@ export const layoutParams = {
 		}
 	]
 };
+
+export const materialParams = (mats) => ({
+	name: 'Materials',
+	icon: <Grid3x3Icon />,
+	params: [
+	{
+		id: 'Material',
+		name: 'Material',
+		component: ()=> (<Material materials={mats}/>)
+	}
+	]
+})
+
+export const SofaParams = {
+	name: 'Styles',
+	icon: <Grid3x3Icon />,
+	params: [
+		{
+			id: 'style',
+			component:  SofaStyle
+		}
+	]
+}

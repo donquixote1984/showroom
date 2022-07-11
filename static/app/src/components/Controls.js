@@ -34,8 +34,8 @@ export default function Controls() {
 
 						<div className={`segment-ctrls ${segment.horizontal ? 'horizontal': ''}`}>
 							{segment.params.map(param => (
-								<div key={param.name} className='segment-ctrl align-items-center mb-4 me-5'>
-									<h6 className='me-5'>{param.name} </h6>
+								<div key={param.id} className='segment-ctrl align-items-center mb-4 me-5'>
+									{param.name && <h6 className='me-5'>{param.name} </h6>}
 									<div>
 										{param.component && <param.component/>}
 									</div>

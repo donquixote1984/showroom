@@ -47,9 +47,30 @@ def threaded_render(context, path):
 	if "layout" in context:
 		param_node.parm("layout").set(context["layout"])
 	
+	if (context['id']=='single_sofa'):
+		_shadeSofa(param_node, context);
+	if (context['id']=='single_cabinet'):
+		_shadeCabinet(param_node, context);
 	print('start render')
 	rnode.render();
 	print('render done');
+
+
+def _shadeSofa(param_node, context):
+	if "sofanum" in context:
+		param_node.parm("sofanum").set(context["sofanum"])
+	if "sofastyle"	in context:
+		param_node.parm("sofastyle").set(context["sofastyle"])
+	if "materials" in context:
+		materials = context['materials']
+		if "sofa" in materials:
+			param_node.parm("sofa").set(materials['sofa'])
+		if "wood" in materials:
+			param_node.parm("wood").set(materials['wood'])
+
+def _shadeCabinet(param_node, context):
+	pass
+
 
 def render1(): 
 	hou.hipFile.load('./static/pigen/pigen.hipnc')
@@ -88,7 +109,38 @@ def findRenderPath(context):
 		multiple=context["multiple"] if "multiple" in context else '',
 		layout=context["layout"] if 'layout' in context else '',
 		)
-	return txt1
+	return txt1 + _renderPathSuffix(context)
+
+def _renderPathSuffix(context):
+	if(proj == 'demo1'):
+		return ''
+	else:
+		if (context['id'] == 'single_sofa'):
+			return _resolveSofaProj(context);
+		if (context['id'] == 'single_cabinet'):
+			return _resolveCabinetProj(context)
+	return '';
+
+def _resolveSofaProj(context):
+	s = ''
+	if ("sofanum" in context):
+		s+=('_sn{sofanum}').format(sofanum=context['sofanum']);
+	if ("sofastyle" in context):
+		s+=('_ss{sofastyle}').format(sofastyle=context['sofastyle'])
+	if ("materials" in context):
+		if ("wood" in context['materials']):
+			s+=('_maw'+context['materials']['wood'])
+		if ("_sofa" in context['materials']):
+			s+=('_mas'+context['materials']['sofa'])
+	return s;
+
+def _resolveCabinetProj(context):
+	s = '';
+	if ('ca_seed1' in context):
+		s+=('_s1'+ context['ca_seed1'])
+	if ('ca_seed2' in context):
+		s+=('_s2'+ context['ca_seed2'])
+
 
 def _render(context, path=None):
 	thread = Thread(target = threaded_render, args = (context, path,))

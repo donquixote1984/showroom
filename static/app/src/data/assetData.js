@@ -1,6 +1,26 @@
-import { layoutParams } from './params';
+import { layoutParams, materialParams, SofaParams} from './params';
+import {SofaMaterials, CabinetMaterials} from './materials';
+export const asset2 = [
+	{
+		id: 'single_sofa',
+		path: '/demo2/geo/single_sofa.obj',
+		thumbnail: 'single_sofa.png',
+		name: 'Sofa',
+		mock: true,
+		proj: 'demo2',
+		params: [materialParams(SofaMaterials), SofaParams]
 
-export default [
+	}, {
+		id: 'single_cabinet',
+		path: '/demo2/geo/single_cabinet.obj',
+		name: 'Cabinet',
+		proj: 'demo2',
+		thumbnail: 'cabinet.png',
+		params: [materialParams(CabinetMaterials)]
+	}
+];
+
+export const asset1 = [
 {
 	id:'watch',
 	path: '/demo1/geo/watch.obj',

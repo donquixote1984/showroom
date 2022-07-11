@@ -44,3 +44,29 @@ export function SofaStyle() {
 	)
 }
 
+export function CabStyle() {
+	const {renderContext, setRenderContext } = useContext(RenderContext);
+	const changeSeed1 = (e, seed1) => {
+		setRenderContext({...renderContext, cabSeed1: seed1})
+	}
+
+	const changeSeed2 = (e, seed2) => {
+		setRenderContext({...renderContext, cabSeed2: seed2})
+	}
+	return (
+		<div>
+
+			<h6 className='mt-5'>Cabinet Seed 1</h6>
+			<div>
+				<Slider value={renderContext.cabSeed1} valueLabelDisplay="auto" size="small" defaultValue={1} marks step={1} min={1} max={10} onChangeCommitted={changeSeed1}/>
+			</div>
+
+			<div>
+			<h6 className='mt-5'>Cabinet Seed 2</h6>
+			<div>
+				<Slider value={renderContext.cabSeed2} valueLabelDisplay="auto" size="small" defaultValue={1} marks step={1} min={1} max={10} onChangeCommitted={changeSeed2}/>
+			</div>
+			</div>
+		</div>
+	)
+}

@@ -1,4 +1,4 @@
-import { layoutParams, materialParams, SofaParams} from './params';
+import { layoutParams, materialParams, SofaParams, CabParams} from './params';
 import {SofaMaterials, CabinetMaterials} from './materials';
 export const asset2 = [
 	{
@@ -16,7 +16,8 @@ export const asset2 = [
 		name: 'Cabinet',
 		proj: 'demo2',
 		thumbnail: 'cabinet.png',
-		params: [materialParams(CabinetMaterials)]
+		params: [materialParams(CabinetMaterials), CabParams],
+		mock: true
 	}
 ];
 

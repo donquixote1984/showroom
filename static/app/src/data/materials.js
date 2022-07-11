@@ -44,7 +44,7 @@ export const SofaMaterials = [
 
 export const CabinetMaterials = [
 {
-	shader: 'Cabinet',
+	shader: "cabinet",
 	selections: [
 		{
 			id: 'cab1',

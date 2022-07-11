@@ -17,4 +17,7 @@ export const initRenderContext = {
 
         sofanum: 3,
         sofastyle: 0,
+
+        cabSeed1: 1,
+        cabSeed2: 1,
 };

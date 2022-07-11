@@ -69,7 +69,14 @@ def _shadeSofa(param_node, context):
 			param_node.parm("wood").set(materials['wood'])
 
 def _shadeCabinet(param_node, context):
-	pass
+	if "cabSeed1" in context:
+		param_node.parm('cabSeed1').set(context["cabSeed1"])
+	if "cabSeed2" in context:
+		param_node.parm('cabSeed2').set(context['cabSeed2'])
+	if "materials" in context:
+		materials = context['materials']
+		if "cabinet" in materials:
+			param_node.parm("cabinet").set(materials['cabinet'])
 
 
 def render1(): 
@@ -130,16 +137,20 @@ def _resolveSofaProj(context):
 	if ("materials" in context):
 		if ("wood" in context['materials']):
 			s+=('_maw'+context['materials']['wood'])
-		if ("_sofa" in context['materials']):
+		if ("sofa" in context['materials']):
 			s+=('_mas'+context['materials']['sofa'])
 	return s;
 
 def _resolveCabinetProj(context):
 	s = '';
-	if ('ca_seed1' in context):
-		s+=('_s1'+ context['ca_seed1'])
-	if ('ca_seed2' in context):
-		s+=('_s2'+ context['ca_seed2'])
+	if ("cabSeed1" in context):
+		s+=('_s1{ca_seed1}').format(ca_seed1=context['cabSeed1']);
+	if ("cabSeed2" in context):
+		s+=('_s2{ca_seed2}').format(ca_seed2=context['cabSeed2']);
+	if ("materials" in context):
+		if ("cabinet" in context['materials']):
+			s+=('_mac'+context['materials']['cabinet'])
+	return s
 
 
 def _render(context, path=None):

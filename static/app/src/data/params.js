@@ -6,6 +6,7 @@ import {SofaStyle, CabStyle} from '../ctrls/Style'
 import {ColorPicker, EnvironmentIntensity} from '../ctrls/Lights';
 import Grid3x3Icon from '@mui/icons-material/Grid3x3';
 import {Material} from '../ctrls/Material';
+import {Assets} from '../ctrls/Assets';
 
 export const commonParams = [
 	{
@@ -77,7 +78,17 @@ export const materialParams = (mats) => ({
 	}
 	]
 })
-
+export const dinnerParams = (assets) => ({
+	name: 'Set',
+	icon: <Grid3x3Icon />,
+	params: [
+		{
+			id: 'composition',
+			name: 'Assets',
+			component: () => <Assets assets={assets}/>
+		}
+	]
+})
 export const SofaParams = {
 	name: 'Styles',
 	icon: <Grid3x3Icon />,
@@ -100,13 +111,3 @@ export const CabParams = {
 	]
 }
 
-export const DinnerParams = {
-	name: 'Set',
-	icon: <Grid3x3Icon />,
-	params: [
-		{
-			id: 'composition',
-			component: DinnerStyle
-		}
-	]
-}

@@ -20,4 +20,10 @@ export const initRenderContext = {
 
         cabSeed1: 1,
         cabSeed2: 1,
+
+        dinnerSet: {
+            table: 4,
+            lamp: 1,
+            chair: 2
+        }
 };

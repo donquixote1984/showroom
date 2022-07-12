@@ -9,7 +9,7 @@ export function Assets({assets}) {
 					<li key={m.shader}>
 						<span className='shader-title'>{m.shader}</span>
 						<div>
-							<AssetSelection asset={m.selections} shader={m.shader}/>
+							<AssetSelection selections={m.selections} shader={m.shader}/>
 						</div>
 					</li>
 					))}
@@ -18,14 +18,16 @@ export function Assets({assets}) {
 	)
 }
 
-export function AssetSelection({asset, shader}) {
+export function AssetSelection({selections, shader}) {
 	const {renderContext, setRenderContext } = useContext(RenderContext);
-	const [selectedId, setSelectedId] = useState();
-	const selectMaterial = (id) => {
+	const [selectedId, setSelectedId] = useState(renderContext.dinnerSet);
+	const dinnerSet = renderContext.dinnerSet;
+
+	const selectAsset = (id) => {
 		setSelectedId(id)
 		setRenderContext({...renderContext, 
-			materials: {
-				...renderContext.materials,
+			dinnerSet: {
+				...dinnerSet,
 				[shader]: id
 			}
 		})
@@ -34,7 +36,9 @@ export function AssetSelection({asset, shader}) {
 		<ul className='material-images'>
 		{selections.map(s => (
 			<li key={s.id}>
-				<a href={null} className={s.id == selectedId ? 'active': ''} onClick={e=>selectMaterial(s.id)}><img className='shader-sample' src={s.image} /></a>
+				<a href={null} className={s.id == dinnerSet[shader]? 'active': ''} onClick={e=>selectAsset(s.id)}>
+					<img className='shader-sample' src={s.image} />
+				</a>
 			</li>
 		))
 		}

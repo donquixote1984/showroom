@@ -71,10 +71,56 @@ export const CabinetMaterials = [
 
 export const DinnerAssets = [
 {
-	shader: '',
+	shader: 'table',
 	selections: [
-		id: 'style1',
-		image: 'content/demo2/tex/dinner_set/st'
+		{
+		id: 0,
+		image: 'content/demo2/tex/dinner_set/table/table1.png'
+		}, {
+			id: 1,
+			image: 'content/demo2/tex/dinner_set/table/table2.png'
+		},{
+			id: 2,
+			image: 'content/demo2/tex/dinner_set/table/table3.png'
+		},{
+			id: 3,
+			image: 'content/demo2/tex/dinner_set/table/table4.png'
+		}
+		,{
+			id: 4,
+			image: 'content/demo2/tex/dinner_set/table/table5.png'
+		}
+	]
+},
+{
+	shader: 'lamp',
+	selections: [
+		{
+			id: 0,
+			image: 'content/demo2/tex/dinner_set/lamp/lamp1.png'
+		},
+		{
+			id: 1,
+			image: 'content/demo2/tex/dinner_set/lamp/lamp2.png'
+		}
+	]
+},
+{
+	shader: 'chair',
+	selections: [
+		{
+			id: 0,
+			image: 'content/demo2/tex/dinner_set/chair/chair1.png'
+		},{
+			id: 1,
+			image: 'content/demo2/tex/dinner_set/chair/chair2.png'
+		},{
+			id: 2,
+			image: 'content/demo2/tex/dinner_set/chair/chair3.png'
+		},{
+			id: 3,
+			image: 'content/demo2/tex/dinner_set/chair/chair4.png'
+		},
 	]
 }
 ]

@@ -68,3 +68,13 @@ export const CabinetMaterials = [
 		}
 	]
 }]
+
+export const DinnerAssets = [
+{
+	shader: '',
+	selections: [
+		id: 'style1',
+		image: 'content/demo2/tex/dinner_set/st'
+	]
+}
+]

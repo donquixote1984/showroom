@@ -18,6 +18,14 @@ export const asset2 = [
 		thumbnail: 'cabinet.png',
 		params: [materialParams(CabinetMaterials), CabParams],
 		mock: true
+	}, {
+		id: 'dinner_set',
+		path: '/demo2/geo/dinner_set.obj',
+		name: 'Dinner Set',
+		proj: 'demo2',
+		mock: true,
+		thumbnail: 'dinner.png',
+		params: [],
 	}
 ];
 

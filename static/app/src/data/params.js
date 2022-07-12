@@ -99,3 +99,14 @@ export const CabParams = {
 		}
 	]
 }
+
+export const DinnerParams = {
+	name: 'Set',
+	icon: <Grid3x3Icon />,
+	params: [
+		{
+			id: 'composition',
+			component: DinnerStyle
+		}
+	]
+}

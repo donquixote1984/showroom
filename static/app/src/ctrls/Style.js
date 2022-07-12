@@ -70,3 +70,15 @@ export function CabStyle() {
 		</div>
 	)
 }
+
+export function DinnerStyle() {
+	const {renderContext, setRenderContext } = useContext(RenderContext);
+	return (
+		<div>
+			<h6 className='mt-5'>Table</h6>
+			<div>
+				
+			</div>
+		</div>
+	)
+}

@@ -5,7 +5,7 @@ export const ParamContext = React.createContext();
 
 export const initRenderContext = {
 		mock: false,
-		HD: false,
+		HD: true,
         capture: '360',
         focalLength: 0,
         lookDownRatio: 0, 

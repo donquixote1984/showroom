@@ -52,7 +52,7 @@ def threaded_render(context, path):
 	if (context['id']=='single_cabinet'):
 		_shadeCabinet(param_node, context);
 	if (context['id'] == 'dinner_set'):
-		_shaderDinnerSet(param_node, context);
+		_shadeDinnerSet(param_node, context);
 	print('start render')
 	rnode.render();
 	print('render done');
@@ -81,26 +81,13 @@ def _shadeCabinet(param_node, context):
 			param_node.parm("cabinet").set(materials['cabinet'])
 
 def _shadeDinnerSet(param_node, context):
-	if "table" in context: 
-		param_node.parm('table').set(context['table']);
-	if "chair" in context:
-		param_node.parm('chair').set(context['chair']);
-	if "lamp" in context:
-		param_node.parm('lamp').set(context['lamp']);
-
-def render1(): 
-	hou.hipFile.load('./static/pigen/pigen.hipnc')
-	rnode = hou.node('/out/mantra1')
-	print("start render")
-	rnode.render()
-
-def render2():
-	hou.hipFile.load('./static/pigen2/pigen2.hipnc')
-	param = hou.node("/obj/geo1/param");
-	param.parm("seed").set(500)
-	rnode = hou.node("/out/mantra1")
-	print("start render")
-	rnode.render()
+	if ('dinnerSet' in context):
+		if "table" in context['dinnerSet']: 
+			param_node.parm('table').set(context['dinnerSet']['table']);
+		if "chair" in context['dinnerSet']:
+			param_node.parm('chair').set(context['dinnerSet']['chair']);
+		if "lamp" in context['dinnerSet']:
+			param_node.parm('lamp').set(context['dinnerSet']['lamp']);
 
 def rgb2Vector(rgb):
 	return {"r": round(rgb['r']/255, 2), "g": round(rgb['g']/255, 2), "b": round(rgb['b']/255, 2)}
@@ -136,6 +123,7 @@ def _renderPathSuffix(context):
 		if (context['id'] == 'single_cabinet'):
 			return _resolveCabinetProj(context)
 		if (context['id'] == 'dinner_set'):
+			print('dinnerset')
 			return _resolveDinnerSetProj(context);
 	return '';
 
@@ -165,12 +153,13 @@ def _resolveCabinetProj(context):
 
 def _resolveDinnerSetProj(context):
 	s=''
-	if ('table' in context):
-		s+=('_table{table}').format(table=context['table']);
-	if ('lamp' in context):
-		s+=('_lamp{lamp}').format(lamp=context['lamp']);
-	if ('chair' in context):
-		s+=('_chair{chair}').format(chair=context['chair']);
+	if ('dinnerSet' in context):
+		if ('table' in context['dinnerSet']):
+			s+=('_table{table}').format(table=context['dinnerSet']['table']);
+		if ('lamp' in context['dinnerSet']):
+			s+=('_lamp{lamp}').format(lamp=context['dinnerSet']['lamp']);
+		if ('chair' in context['dinnerSet']):
+			s+=('_chair{chair}').format(chair=context['dinnerSet']['chair']);
 	return s
 
 def _render(context, path=None):

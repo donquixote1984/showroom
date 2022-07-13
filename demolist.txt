@@ -1,0 +1,79 @@
+1. watch 360
+2. watch 6s
+3. watch 360 focal length -2
+4. watch 360 look down ratio 30
+5. watch 360 front light
+--------------------------------
+6 samsung 360 default
+7 camera 360 default
+8 switch 360 default
+-------------------------------
+9 watch 360 x3
+10 watch 360 x3 with seed
+11 watch 360 x4 with seed
+--------------------------------
+12 amazon article & amazon demo
+-------------------------------
+13 sofa material selection
+14 sofa material selection with styles and sofa num
+15 cabinet material selection with styles
+16 dinner set selection
+
+--------------------------------
+the feature of amazon showroom creates immersive shopping experiences by providing product images in all perspectives and switch different materials, photoreal textures and shading.
+so does korea amazon,  and can be better.
+
+Story I
+
+the first story will show you how to generate images in all perspective.
+
+imagine you want to view a customer electronic product,  only front view of product may not enough for customer to make purchase decision. especially diving into level of details.
+to show product in 360 angle of view, one option is taking lots of photos by real camera, another option is by virtual camera. we will do it in option 2. 
+
+here we have several virtual assets to generate images like apple watch, nitendo switch, notebook etc. by selecting one assets, you can tweak the details for virtual camera to capture. 
+
+you can either choose 360 degrees image, or 6 side images. 
+by click render,  photo sequence can automatically generated in minutes. u can choose some of them for the later post processing like photoshop composition or add background.  the perspective view is not the only factor, you can try different set of parameters to get what you needs, including camera angle and position,  lighting color, or even the material.
+theoretically you can generate all the real world product once you got the asset, the asset can be aquired by third party asset store,  CAD file by manufacture, or just model it by 3D modeling tools like autodesk maya or Cinema 4D.
+
+
+that is just the basic. furthur more we can generate multiple product in one image just by tweaking the parameters and different programmatic seed. you can choose the image layout, or just partial color of product. this is useful for customized product like furniture. 
+--------------------------------
+Story II
+
+the second story will introduce more variable to generate more flexible product image
+
+Here is sofa product, the manufacture usually support customize by different color or materials, or even the appearence itself. 
+
+by selecting different part of materials.  you can generate totally different kinds of product, or even you can set the sofa number,  and sofa style, like customize if there is a side sofa, and its orientiation.
+
+so do the cabinet. you can even generate an wooden cabinet or iron cabinet, you can also tweak the seed to generate different space distribution of the cabinet.
+
+we are not stop yet. remember amazon showroom can choose different furniture and composite them into one scene. we can do it better.
+here is a dinner desk. you can choose different style of furniture to get into a whole feel and send this picture to manufacture. of cause , you can get 360 angle of view in multiple images. 
+
+--------------------------------
+
+Story III
+
+this story will show you how we do it
+
+first we got the product asset, some are downloaded from the asset store, some are from the CAD file provided by seller.  usually the asset will include the 3d geometry and the texture. 
+we will put them into 3d render engine to make preview, some product geometry need to be remesh due to there is too many vertices.  we will convert the render to a PBR workflow and set the camera position to surround the product.  we will also make parameters in order to interact with web interface. in story II we need the content generation workflow, and using Houdini to remodel product to support dynamic geometry.  so various color, various layout can be supported. 
+
+like amazon , we also use substance painter to make various materials and textures,  in order to support material customize.
+--------------------------------
+Story IV
+
+Epilogue
+
+we can not say this is metaverse or digital twin,  we can name it the procedual product image generation tool, to enhance our ecommerce product visibility,  wow the customer by providing infinite details, and expand our boundary to visualize customizable product. 
+
+TEAM:  
+guoxu.wu@coupang.com
+
+Project:
+How to generate 1k product image in one click.
+
+
+

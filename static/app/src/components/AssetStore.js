@@ -60,7 +60,7 @@ export default function AssetStore() {
 				{
 					asset2.map(asset => (
 						<li className="asset" key={asset.path}>
-							<a href={null} onClick={e => onAssetClick(asset)}>
+							<a className={currentId == asset.id ? 'active':''} href={null} onClick={e => onAssetClick(asset)}>
 								<img src={'thumbnails/' + asset.thumbnail} className='asset-image'/>
 								<div className='asset-name'>{asset.name}</div>
 							</a>

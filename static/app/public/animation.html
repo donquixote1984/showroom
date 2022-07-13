@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Product Image Generate App</title>
+    <style>
+      .seq {
+        margin-bottom:  100px;
+        display: flex;
+        align-items: center;
+        
+      }
+      img {
+        margin-right:  50px;
+        transform:  translateX(2500px);
+        transition: all 2s cubic-bezier(0.42, -0.1, 0.57, 1.12) 
+      }
+      body {
+        padding:  200px 100px;
+      }
+      .ani {
+        transform:  translateX(0);
+      }
+      #img2.ani {
+        transition-delay: .2s;
+      }
+       #img3.ani {
+        transition-delay: .3s;
+      }
+
+      #img4.ani {
+        transition-delay: 2s;
+      }
+      #img5.ani {
+        transition-delay: 4s;
+      }
+      #img6.ani {
+        transition-delay: 4.2s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class='seq seq1'>
+      <img id='img1' src='thumbnails/sketchfab.jpg' width=500/>
+      <img id='img2' src='thumbnails/turbosquid.png' />
+      <img id='img3'src='thumbnails/cgtrader.jpg' width=400/>
+    </div>
+
+    <div class='seq seq2'>
+      <img id='img4' src='thumbnails/autodesk.png' width='500px'/>
+    </div>
+    <div class='seq seq3'>
+      <img id='img5' src='thumbnails/maya.jpg' width=200/>
+      <img id='img6' src='thumbnails/c4d.png' width=200/>
+    </div>
+    <script>
+      $(function() {
+        $('#img1').addClass('ani')
+        $('#img2').addClass('ani')
+        $('#img3').addClass('ani')
+        $('#img4').addClass('ani')
+        $('#img5').addClass('ani')
+        $('#img6').addClass('ani')
+      })
+      
+    </script>
+  </body>
+
+</html>

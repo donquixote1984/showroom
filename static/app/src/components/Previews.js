@@ -53,7 +53,7 @@ export default function Previews() {
 						endLoading();
 					}
 				}
-			}, 4000);
+			}, 2000);
 		}
 
 	}
